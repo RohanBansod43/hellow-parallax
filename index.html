@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>moonlight parallax</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <header id="header">
+        <a href="#" class="logo">LOGO</a>
+        <ul>
+            <li><a class="active" href="#">Home</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Work</a></li>
+            <li><a href="#">Contact</a></li>
+        </ul>
+    </header>
+    <section>
+        <img src="stars.png" alt="*" id="stars">
+        <img src="moon.png" alt="*" id="moon">
+        <img src="mountains_behind.png" alt="*" id="mountains_behind">
+        <h2 id="text">Moon Light</h2>
+        <a href="#sec" id="btn">Explore</a>
+        <img src="mountains_front.png" alt="*" id="mountains_front" >
+    </section>
+    <div class="sec" id="sec">
+        <h2>parallax scrooling effect   </h2>
+        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Beatae vel unde commodi voluptatum rerum suscipit velit quos <br>, eveniet accusantium expedita minus dolore temporibus doloremque molestias error neque tempore autem repellat! Lorem ipsum dolor sit, amet consectetur adipisicing elit. Voluptas consectetur et sed excepturi <br>, fugit dolorem facilis dignissimos soluta reprehenderit, amet rem vero illum, eius ad. Asperiores, tempora laudantium harum, saepe consequuntur quis reiciendis recusandae hic vitae, nesciunt <br> <br> labore voluptatem distinctio nobis? At tempora minima reprehenderit? Lorem ipsum dolor sit amet consectetur adipisicing elit. At velit iusto quisquam, dolorum nisi accusamus esse ducimus minima aliquid incidunt! Animi sunt aperiam libero. Recusandae neque fugiat ipsa quod expedita reprehenderit facere sint voluptatum <br> <br> et reiciendis ut libero totam dolorum, ipsum culpa necessitatibus eaque nam explicabo repellendus voluptates doloribus tempore magnam. A ex perferendis aut nesciunt! Deserunt totam quisquam inventore.</p>
+
+    </div>
+
+    <script>
+        let stars = document.getElementById('stars');
+        let moon = document.getElementById('moon');
+        let mountains_behind = document.getElementById('mountains_behind');
+        let text = document.getElementById('text');
+        let btn = document.getElementById('btn');
+        let mountains_front = document.getElementById('mountains_front');
+        let header = document.getElementById('header');
+
+        window.addEventListener('scroll', function(){
+            let value = window.scrollY;
+            stars.style.left = value*0.75 + 'px';
+            moon.style.top = value*0.25 + 'px';
+            mountains_behind.style.top = value*0.5 + 'px';
+            mountains_front.style.top = value*0 + 'px';
+            text.style.marginRight = value*4  + 'px';
+            text.style.marginTop = value*1.5   + 'px' ;
+            btn.style.marginTop = value*1.5   + 'px' ;
+            header.style.top = value*0.5   + 'px' ;
+        })
+
+        
+    </script>
+</body>
+
+</html>
